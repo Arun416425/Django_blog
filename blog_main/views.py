@@ -1,5 +1,18 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+from blogs.models import Category, Blog
+from django.http import HttpResponse
+
 
 def home(request):
-    return render(request, 'home.html')
+    categories = Category.objects.all()
+    featured_post = Blog.objects.filter(is_featured=True, status="Published")
+    posts = Blog.objects.filter(is_featured=False, status="Published")
+    context = {
+        "categories": categories,
+        "featured_post": featured_post,
+        "posts": posts,
+    }
+    return render(request, "home.html", context)
+
+
+
