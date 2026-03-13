@@ -2,11 +2,10 @@
 
 {% block content %}
 
-<!-- Featured Posts -->
-<h3 class="text-uppercase text-dark-emphasis" style="letter-spacing: 2px;">category - {{ category }}</h3>
+<h3 class="text-uppercase text-dark-emphasis" style="letter-spacing: 2px;">Search Term - {{ keyword|capfirst}}</h3>
 <div class="row mb-2">
-    {% if posts %}
-    {% for post in posts %}
+    {% if blogs %}
+    {% for post in blogs %}
     <div class="col-md-6">
         <div class="card border-0">
             <div class="card-body">
@@ -21,5 +20,5 @@
     <p>No posts found</p>
     {% endif %}
 </div>
-</main><!-- /.container -->
+
 {% endblock %}
