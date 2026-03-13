@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="row">
+    <!-- Left Content -->
+    <!-- Side bar -->
+    {% include 'dashboard/sidebar.html' %}
+
+    <!-- Right Content -->
+    <div class="col-md-9 mx-auto">
+        {% if perms.auth.add_user %}
+        <h2 class="my-4 my-md-2 text-center">
+            {% if category %} Edit {% else %} Add New {% endif %} User
+        </h2>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-6">
+                <form action="{% url 'add_user' %}" method="POST" enctype="multipart/form-data"
+                    class="shadow-sm p-4 bg-light rounded border">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        {{ form|crispy }}
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-warning fw-bold">
+                            {% if category %} Update {% else %} Add {% endif %} User
+                        </button>
+                        <a href="{% url 'categories' %}" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        {% else %}
+        <p class="text-dark bg-danger p-3 rounded text-center fw-bolder mt-md-4">You do not have permission to view this page</p>
+        {% endif %}
+    </div>
+
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <!-- Left Content -->
+    <!-- Side bar -->
+    {% include 'dashboard/sidebar.html' %}
+
+    <!-- Right Content -->
+    <div class="col-md-9">
+        {% if perms.auth.view_user %}
+        <div class="row align-items-center gy-3 mb-4">
+            <div class="col-12 col-md-8 col-lg-6 text-center text-lg-start">
+                <h2 class="mb-0">All Users</h2>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-6 d-flex justify-content-center justify-content-lg-end">
+                <a href="{% url 'add_user' %}"
+                    class="btn btn-dark btn-sm text-light text-decoration-none shadow-sm px-4">
+                    Add User
+                </a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Username</th>
+                        <th class="d-none d-md-table-cell">Email</th>
+                        <th class="d-none d-lg-table-cell">Superuser</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td class="fw-bold">{{ user.username }}</td>
+                        <td class="d-none d-md-table-cell small">{{ user.email }}</td>
+                        <td class="d-none d-lg-table-cell small">
+                            {% if user.is_superuser %}<i class="fa fa-check text-success"></i>{% else %}<i
+                                class="fa fa-times text-danger"></i>{% endif %}
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group" role="group">
+                                <a href="{% url 'edit_user' user.id %}" class="btn btn-sm btn-outline-success border-0">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="{% url 'delete_user' user.id %}" class="btn btn-sm btn-outline-danger border-0">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">No posts found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-dark bg-danger p-3 rounded text-center fw-bolder mt-md-4">You do not have permission to view this page</p>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}
