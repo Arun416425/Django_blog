@@ -25,8 +25,8 @@ This project simulates a real-world blogging platform where users can read, crea
 <h2>Frontend</h2>
 <p>HTML</p>
 <p>CSS</p>
-<p>Bootstrap</p>p
+<p>Bootstrap</p>
 
-Database
+<h2>Database</h2>
 
-SQLite (Default Django DB)
+<p>SQLite (Default Django DB)</p>
