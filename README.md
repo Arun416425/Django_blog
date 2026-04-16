@@ -1,7 +1,7 @@
 <h1>Django Blog Website</h1>
 
 <p>A full-featured Blog Web Application built using Django and HTML templates following the Django MVT architecture.
-This project simulates a real-world blogging platform where admin can read, create, update, and manage blog posts.</h3>
+This project simulates a real-world blogging platform where admin can read, create, update, and manage blog posts.</p>
 
 <h2>Features</h2>
 
