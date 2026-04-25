@@ -6,7 +6,7 @@ This project simulates a real-world blogging platform where admin can read, crea
 <h2>Features</h2>
 
 <li>User Registration & Login</li>
-<p>Create Blog Posts</p>
+<li>Create Blog Posts</li>
 <p>Edit & Delete Posts</p>
 <p>View All Blog Posts</p>
 <p>Individual Blog Detail Page</p>
