@@ -13,7 +13,7 @@ This project simulates a real-world blogging platform where admin can read, crea
 <li>Django Admin Panel</li>
 <li>Responsive HTML Templates</li>
 <li>Secure Authentication System</li>
-<p>Clean URL Structure</p>
+<li>Clean URL Structure</li>
 
 <h1>Tech Stack</h1>
 
