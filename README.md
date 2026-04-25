@@ -10,7 +10,7 @@ This project simulates a real-world blogging platform where admin can read, crea
 <li>Edit & Delete Posts</li>
 <li>View All Blog Posts</li>
 <li>Individual Blog Detail Page</li>
-<p>Django Admin Panel</p>
+<li>Django Admin Panel</li>
 <p>Responsive HTML Templates</p>
 <p>Secure Authentication System</p>
 <p>Clean URL Structure</p>
