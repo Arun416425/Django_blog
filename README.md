@@ -11,7 +11,7 @@ This project simulates a real-world blogging platform where admin can read, crea
 <li>View All Blog Posts</li>
 <li>Individual Blog Detail Page</li>
 <li>Django Admin Panel</li>
-<p>Responsive HTML Templates</p>
+<li>Responsive HTML Templates</li>
 <p>Secure Authentication System</p>
 <p>Clean URL Structure</p>
 
